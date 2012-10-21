@@ -54,7 +54,7 @@ public class ArrayOfNumbers {
 			a[0]=value;
 		}
 	}
-	public ArrayOfNumbers AND (ArrayOfNumbers b)
+	public ArrayOfNumbers OR (ArrayOfNumbers b)
 	{
 		ArrayOfNumbers result=new ArrayOfNumbers();
 		int i=0,j=0;
@@ -68,6 +68,19 @@ public class ArrayOfNumbers {
 			result.addValue( getIndex(i++));
 		while(j<b.getLength())
 			 result.addValue(b.getIndex(j++));
+		return result;
+	}
+	public ArrayOfNumbers AND (ArrayOfNumbers b)
+	{
+		ArrayOfNumbers result=new ArrayOfNumbers();
+		int i=0,j=0;
+		while(i<getLength()&&j<b.getLength())
+		{
+			if(getIndex(i)<b.getIndex(j)) i++;
+			else if(getIndex(i)>b.getIndex(j)) j++;
+			else {result.addValue(getIndex(i++));j++;}
+		}
+		
 		return result;
 	}
 	
