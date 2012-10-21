@@ -31,7 +31,7 @@ public class ArrayOfNumbers {
 	{
 		String value="";
 		for(int i=0;i<a.length;i++)
-			value+=a[i];
+			value+=a[i]+" ";
 		return value;
 		
 	}
