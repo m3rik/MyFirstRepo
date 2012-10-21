@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
+import java.util.*;
 
 /**
  * 
@@ -36,6 +37,9 @@ public class Dictionary {
 				numEntries++;
 				// TO DO: aici veti procesa fiecare linie din dictionar
 				// HINT: String tokenizer
+				StringTokenizer st=new StringTokenizer(strLine);
+				new ArrayOfNumbers(strLine.substring(st.nextToken().length()+1));
+				
 			}
 			reader.close();
 		}catch (Exception e) {
