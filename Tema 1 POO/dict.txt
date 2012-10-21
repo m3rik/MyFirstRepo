@@ -1,3 +1,5 @@
 ana 1 2 3 4 5 6
 gigi 4 5
 ionel 1 2 9
+ioana 1 3 4 6 7
+maria 8 9 10
