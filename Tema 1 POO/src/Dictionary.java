@@ -17,6 +17,7 @@ public class Dictionary {
 	 * 
 	 */
 	private int numEntries = 0;
+	private Trie t=new Trie();
 	
 	/**
 	 * 
@@ -31,14 +32,22 @@ public class Dictionary {
 			Scanner reader = new Scanner(dictFile);
 			String strLine;
 			
-			while (reader.hasNextLine()) {
+ 			while (reader.hasNextLine()) {
 				strLine = reader.nextLine(); // in strLine este linia curenta din dictionar
 				System.out.println(strLine);
 				numEntries++;
 				// TO DO: aici veti procesa fiecare linie din dictionar
 				// HINT: String tokenizer
 				StringTokenizer st=new StringTokenizer(strLine);
-				new ArrayOfNumbers(strLine.substring(st.nextToken().length()+1));
+				String name=st.nextToken();
+				try
+				{
+					t.addKey(name, new ArrayOfNumbers(strLine.substring(name.length()+1)));
+				}
+				catch (Exception e)
+				{
+					System.out.println("Exceptie: "+ e);
+				}
 				
 			}
 			reader.close();
@@ -56,5 +65,8 @@ public class Dictionary {
 	 */
 	public int getnumEntries() {
 		return numEntries;
+	}
+	public Trie getTrie() {
+		return t;
 	}
 }

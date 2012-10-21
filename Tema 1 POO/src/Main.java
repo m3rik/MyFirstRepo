@@ -16,7 +16,9 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Dictionary d = new Dictionary(args[0]);
-		System.out.println("Avem " + d.getnumEntries() + " intrari in dictionar");		
+		Trie t=d.getTrie();
+		System.out.println("Avem " + d.getnumEntries() + " intrari in dictionar");
+		System.out.println(t.findKey("maria"));
 	}
 
 }
