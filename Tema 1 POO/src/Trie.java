@@ -36,10 +36,12 @@ public class Trie {
 	}
 	private Trie containsChar(char c)
 	{
-		for(int i=0;i<t.length;i++)
-		{
-			if(t[i].getChar()==c) return t[i];
-		}
+		if(t!=null)
+			for(int i=0;i<t.length;i++)
+			{
+				if(t[i].getChar()==c) return t[i];
+			}
+		
 		return null;
 	}
 	
@@ -65,6 +67,7 @@ public class Trie {
 	}
 	public void addKey(String name,ArrayOfNumbers array)
 	{
+	
 		Trie temp=containsChar(name.toCharArray()[0]);
 		
 		if (temp==null) temp=addTrie(name.toCharArray()[0]);
@@ -74,16 +77,24 @@ public class Trie {
 	}
 	public ArrayOfNumbers findKey(String name)
 	{
-		Trie temp = containsChar(name.toCharArray()[0]);
+		Trie temp;
+		try
+		{
+			temp = containsChar(name.toCharArray()[0]);
+		}
+		catch (Exception e)
+		{
+			System.out.println("Exceptie: " + e);
+			temp=null;
+		}
+		
 		if(temp==null)return null;
 		else 
 			if(name.toCharArray().length==1)
 				return temp.getArray();
 			else 
 				return temp.findKey(name.substring(1));
-			
-		
-		
+						
 	}
 		
 
