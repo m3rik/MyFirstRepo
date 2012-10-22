@@ -1,3 +1,10 @@
+/**	Implementeaza conceptul Trie.
+ * 
+ * @author Urziceanu Paul
+ * @version 1.0
+ *
+ */
+
 public class Trie {
 
     private Trie[] t;

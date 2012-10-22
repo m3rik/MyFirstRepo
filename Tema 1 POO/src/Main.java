@@ -16,9 +16,24 @@ public class Main {
 	 * Argumentele primite de program
 	 */
 	public static void main(String[] args) {
-		Dictionary d = new Dictionary(args[0]);
+		Dictionary d;
+		/** Folosim try/catch pentru a verifica daca am primit ca argument un string.
+		 * 
+		 */
+		try
+		{
+			d = new Dictionary(args[0]);
+		}
+		catch (Exception e)
+		{
+			System.out.println("Exceptie: " + e);
+			return;
+		}
+		
 		Trie t=d.getTrie();
+		
 		System.out.println("Avem " + d.getnumEntries() + " intrari in dictionar");
+		
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String s;
 		Interogare i=new Interogare(t);

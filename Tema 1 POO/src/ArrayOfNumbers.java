@@ -1,6 +1,11 @@
 import java.util.StringTokenizer;
 
-
+/**
+ * Am implentat peste vectorul de tip int clasa ArrayOfNumbers
+ * care se comporta precum un vector si are si operatiile de AND si OR cu alte ArrayOfNumbers
+ * @author Urziceanu Paul
+ *
+ */
 public class ArrayOfNumbers {
 	private int[] a;
 	public ArrayOfNumbers(String line)
