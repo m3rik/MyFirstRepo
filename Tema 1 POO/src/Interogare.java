@@ -13,6 +13,7 @@ public class Interogare {
 	
 	private ArrayOfNumbers evaluate(String s)
 	{
+		
 		StringTokenizer st=new StringTokenizer(s);
 		ArrayOfNumbers a,b;
 		String aName,operator,bName;
@@ -30,8 +31,8 @@ public class Interogare {
 			if(a==null&&operator.equals("or")) return b;
 			if(b==null&&operator.equals("or")) return a;
 			
-			if(operator.equals("and"))a.AND(b);
-			else a.OR(b);
+			if(operator.equals("and"))return a.AND(b);
+			else return a.OR(b);
 			
 			
 			
@@ -53,9 +54,12 @@ public class Interogare {
 		while(s.lastIndexOf('(')!=-1)
 		{
 			int b=s.lastIndexOf('('), e=s.indexOf(')',b);
-			aux.addKey("_"+index, evaluate(s.substring(b+1,e-1)));
+			
+			aux.addKey("_"+index, evaluate(s.substring(b+1,e)));
 			s=s.substring(0,b)+"_"+index +s.substring(e+1, s.length());
+			index++;
 		}
+		
 		return aux.findKey(s);
 	}
 }
