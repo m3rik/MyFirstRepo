@@ -22,11 +22,19 @@ public class Main {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String s;
 		Interogare i=new Interogare(t);
+		
 		try {
 			while ((s = in.readLine())!=null)
 			{
-				System.out.println(s);
 				if(s.equals("exit")) break;
+				
+				if(s.length()>0)
+				{
+					ArrayOfNumbers answer=i.ask(s);
+					if(answer!=null)System.out.println(answer);
+					else System.out.println("");
+				}
+				
 			}
 						
 			
