@@ -5,3 +5,5 @@ john 5 7 9
 carl 1 2 3 4 5 
 cornel 4 5 6 7
 jean 1 2 6 9
+jea 1 2 3 4
+corn 1 2 3

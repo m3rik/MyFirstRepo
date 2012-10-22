@@ -30,6 +30,11 @@ public class ArrayOfNumbers {
 		 	System.out.println("Exceptie: " + e);
 		 }		 
 	 }
+	public boolean isEmpty()
+	{
+		if(a==null)return true;
+		else return false;
+	}
 	public ArrayOfNumbers()
 	{
 		a=null;
@@ -85,8 +90,8 @@ public class ArrayOfNumbers {
 			else if(getIndex(i)>b.getIndex(j)) j++;
 			else {result.addValue(getIndex(i++));j++;}
 		}
-		
-		return result;
+		if(result.isEmpty())return null;
+		else return result;
 	}
 	
 	@Override
