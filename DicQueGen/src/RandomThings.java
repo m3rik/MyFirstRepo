@@ -2,7 +2,7 @@ import java.util.Random;
 
 
 public class RandomThings {
-	static Random gen=new Random();
+	static public Random gen=new Random();
 	static public String nextString()
 	{
 		char[] value;
