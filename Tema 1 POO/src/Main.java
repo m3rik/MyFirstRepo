@@ -17,6 +17,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Dictionary d;
+		
 		/** Folosim try/catch pentru a verifica daca am primit ca argument un string.
 		 * 
 		 */
