@@ -17,7 +17,6 @@ public class Interogare {
 	public Interogare(Trie t)
 	{
 		this.t=t;
-		aux=new Trie();
 	}
 	/**
 	 * Evalueaza o interogare simpla de tipul "a AND b" sau "a or b"
@@ -66,6 +65,7 @@ public class Interogare {
 	public ArrayOfNumbers ask(String s)
 	{
 		int index=0;
+		Trie aux=new Trie();
 		/**
 		 * Daca nu exista nicio paranteza inseamna ca avem o interogare de un singur element.
 		 */
@@ -89,7 +89,6 @@ public class Interogare {
 			s=s.substring(0,b)+"_"+index +s.substring(e+1, s.length());
 			index++;
 		}
-		
 		return aux.findKey(s);
 	}
 }

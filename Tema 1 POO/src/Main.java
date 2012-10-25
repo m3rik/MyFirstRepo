@@ -40,15 +40,17 @@ public class Main {
 		Interogare i=new Interogare(t);
 		
 		try {
+			int current=1;
+			QueryThread[] threads=new QueryThread[3];
 			while ((s = in.readLine())!=null)
 			{
 				if(s.equals("exit")) break;
 				
 				if(s.length()>0)
 				{
-					ArrayOfNumbers answer=i.ask(s);
-					if(answer!=null)System.out.println(answer);
-					else System.out.println("");
+					while(threads[(current-1)%3]!=null && threads[(current-1)%3].isAlive());
+					threads[(current-1)%3]=new QueryThread(i,s,current);
+					
 				}
 				
 			}
